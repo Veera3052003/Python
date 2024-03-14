@@ -1,0 +1,15 @@
+git config --global user.name "Veera3052003"
+
+$ git config --global user.email "veeralakshmimariyappan2003@gmail.com"
+
+To check it, whether the name and email set...
+
+$ git config --global user.name
+Veera3052003
+
+$ git config --global user.email
+veeralakshmimariyappan2003@gmail.com
+
+
+GitHub Codespaces
+

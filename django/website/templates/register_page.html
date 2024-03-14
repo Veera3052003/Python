@@ -1,0 +1,50 @@
+{%include 'navbar.html'%}
+{% comment %} {%load crispy_forms_tags %} {% endcomment %}
+{% block content%}
+<style>
+    .header{
+        text-align:center;
+        margin-top:49px;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        max-width: 369px;
+        margin: 45px auto;
+        border-radius: 10px;
+        box-shadow: -1px 0px 16px 2px rgb(231 226 231);
+        padding: 53px;
+        font-family:monospace;
+        {% comment %} background-color:rgb(211 209 211); {% endcomment %}
+    }
+    .button_center{
+        margin:10px auto; 
+    }
+    .button_style{
+        width:263px;
+    }
+    
+</style>
+<h1 class="header">Welcome to registration page!</h1>
+{% comment %} {{form}} {% endcomment %}
+<form method="POST" action="" atuocomplete="off">
+    {%csrf_token%}
+    {% comment %} {{form|crispy}} {% endcomment %}
+    {% comment %} {%crispy form%} {% endcomment %}
+    <div><div>{{form.username.label}}:</div><div>{{form.username}}</div></div><br>
+    <div><div>{{form.email.label}}:</div><div>{{form.email}}</div></div><br>
+    <div><div>{{form.password1.label}}:</div><div>{{form.password1}}</div></div><br>
+    <div><div>{{form.password2.label}}:</div><div>{{form.password2}}</div></div><br>
+{%if messages%}
+<ul class="messages">
+    {%for message in messages%}
+    {{message}}
+    {%endfor%}
+</ul>
+{%endif%}
+<div class="button_center"><input class="button_style" type="submit" value="REGISTER"></div>
+</form>
+{% comment %} {{form.username.label}} {{form.as_p}} {% endcomment %}
+{% comment %} to have a default perfect alignment {% endcomment %}
+
+{%endblock content%}

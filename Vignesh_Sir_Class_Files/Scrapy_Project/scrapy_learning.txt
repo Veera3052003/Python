@@ -1,0 +1,16 @@
+import requests
+import re
+from bs4 import BEautifulSoup
+
+url="https://webscraper.io/test-sites/e-commerce/allinone"
+
+datas=requests.get(url)
+
+soupObj=BeautifulSoup(datas.content)
+
+print(soupObj.prettify())
+
+for price in re.findeiter(r'<h4 class="pull-right price">(."?)<\/hr>',str(soupObj)):
+	print(price.group(1))
+	print()
+

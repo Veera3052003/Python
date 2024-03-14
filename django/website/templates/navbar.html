@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<style>
+  .navbar-custom{
+    background-color: rgb(30, 0, 0);
+    height: 60px;
+    font-size: 35px;
+    display:flex;
+    justify-content:space-around;
+  }
+</style>
+<body>
+    <div class="container">
+        <ul class="nav navbar-custom">
+          <li class="nav-item">
+            <a class="nav-link link-light" href="/">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-light" href="/dashboard">DASHBOARD</a>
+          </li>
+          {% if user.is_authenticated%}
+          <li class="nav-item">
+            <a class="nav-link link-light" href="/logout">LOGOUT</a>
+          </li>
+          {%else%}
+          <li class="nav-item">
+            <a class="nav-link link-light" href="/login">LOGIN</a>
+          </li>
+          {%endif%}
+
+          <li class="nav-item">
+            <a class="nav-link link-light" href="/register">REGISTER</a>
+          </li>
+        </ul>
+    </div>
+<hr>
+{%block content%}
+{%endblock content%}
+</body>
+</html>

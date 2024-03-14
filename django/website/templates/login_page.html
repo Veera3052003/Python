@@ -1,0 +1,26 @@
+{%include 'navbar.html'%}
+{% block content%}
+<br>
+<style>
+    .card{
+        max-width: 375px;
+        height: 282px;
+        margin: 10px auto;
+        padding: 31px;
+        border-radius: 8px;
+        box-shadow: -1px 0px 16px 2px rgb(231 226 231);
+        margin-top:57px;
+    }
+</style>
+<div class="card">
+    <h1 style="text-align:center">LOGIN</h1><br>
+    {%endblock content%}
+    <form style="text-align:center" action="" method="POST">
+        {% csrf_token %}
+
+        USERNAME: <input type="text" name="uname"><br><br>
+        PASSWORD: <input type="password" name="passwd"><br><br>
+        <input type="submit" value="LOGIN">
+        
+    </form>
+</div>

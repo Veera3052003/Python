@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{%include 'navbar.html'%}
+{%block content%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+</head>
+<body>
+<h1 style="text-align:center">Student update</h1>
+<br>
+{% comment %} {%for data in data%}; {% endcomment %}
+<div style="background-color:powderblue; text-align:center; border:2px solid black; padding:20px; max-width:350px; margin:auto;">
+    {% comment %} {{data}} {% endcomment %}
+    <form method="POST" action="">
+        {%csrf_token%}
+        <label>Name:</label>
+        <input type="text" value="{{data.s_name}}" name="name"><br><br>
+        <label>E-mail:</label>
+        <input type="text" value="{{data.s_email}}" name="email"><br><br>
+        <label>Phone:</label>
+        <input type="text" value="{{data.s_phone}}" name="phone"><br><br>
+        <input type="submit" value="Update">
+        {%if messages%}
+        <ul class="messages">
+            {%for message in messages%}
+                {{message}}
+            {%endfor%}
+        </ul>
+        {%endif%}
+</div>
+
+{% comment %} {%endfor%} {% endcomment %}
+</body>
+{%endblock content%}
+</html>
