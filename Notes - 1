@@ -1,0 +1,199 @@
+ABSOLUTE_PATH:
+i/p - #C:\Users\.....>python C:\Users\....\OneDrive\Desktop\hello_world.py
+o/p - hello world
+copy and pasting the full path is known as Absolute path.
+
+#C:\Users\.....>python "C:\Users\....\OneDrive\Desktop\hello world.py"
+if u use space btw the file name.
+
+#can also directly DRAG &  DROP the file in cmd prmpt to run
+
+DIR - directory
+CD - Change Directory
+
+d - stands for directory(folder)
+a -  stands for file
+
+RELATIVE_PATH:
+C:\Users\...\AppData\Local\Programs\Python\Python312\python.exe - insalled directory (this whole path is absolute path)
+C:\Users\...\AppData\Local\Microsoft\WindowsApps\python.exe - (relative path) will navigate to microsoft store
+
+Environment variable:
+Environment variables store data that's used by the operating system and other programs.
+C:\Users\...\AppData\Local\Programs\Python\Python312\python.exe - environment variable
+
+To call a python  - python filename.py
+
+# \ is an Escape character
+print("first line","\nsecond line")
+
+#Positional arguments (also known as multiple args)
+print("\nfirst line","\nsecond line\n")
+
+print('-' * 30 , "\nfirst line","\nsecond line", '-' * 30)
+
+#keyword arguments(end,sep(separators)
+keyword args should be always be at the END
+print("first line","second line" , sep='\n')
+
+what is the style sheet or  guide to write python?
+PEP8
+
+\n -  new line
+\t - gives one tab space
+\b -  remove one letter backward ('hello\bworld') , o/p :hellworld
+\f -  new line
+\r - executes right side ('hello\rworld') , o/p : world
+\v - makes the first letter of word in UPPERCASE , ('hello\vworld') , o/p : helloWorld ('w'in caps)
+
+when "use \ with characters like ( \n,\v,\b,\f,\r,\v) " python  will consider this as Special characters.
+
+#Index_number:
+Left index starts from 0 & right index starts from -1 # always remember end position -1
+
+#slicing --> var[start:end:step]
+
+#slicing works only in iteratable items
+
+#tuple() - immutable - cannot be modified
+even_nos = (2,4,6,8,10,12,14,16,18,20)
+
+#list[] - mutable
+even_nos = [2,4,6,8,10,12,14,16,18,20]
+#can change only one item at a time
+
+#to find num of items --> len()
+print(len(even_nos))
+
+# word_one = 'java'
+# word_two = 'code'
+#
+# print(word_one[1:] + word_two[0:-1])
+#
+# #tuple()
+# tuple_even_nos = (2,4,6,8,10,12,14,16,18,20)
+#
+# #list[] - mutable
+# list_even_nos = [2,4,6,8,10,12,14,16,18,20]
+# #can change only one item at a time
+# list_even_nos[1]=30
+# print(list_even_nos)
+# #to find num of items --> len()
+# print(len(list_even_nos))
+#
+# #print half of the items
+# print(list_even_nos[0:len(list_even_nos)//2])
+#
+# #methods var.
+#
+# print(list_even_nos.count(10))
+# list_even_nos.append(7)
+# print(list_even_nos)
+# list_even_nos.insert(0,200)
+# print(list_even_nos)
+
+# can join two list --> .extend
+
+num = [2,4,6,8,10,12,14,16,18,20]
+
+first_half = num[0:len(num)//2]
+
+rev_first_half = first_half[::-1]
+#
+second_half = num[len(num)//2:]
+#
+rev_second_half = second_half[::-1]
+#methods will return none if u print , u should print the actual variable name , rather than creating a new variable for the method
+rev_first_half.extend(rev_second_half)
+print(rev_first_half)
+
+#do it in single line --> task
+
+#dictionary {key:value} --> key always should be UNIQUE(in a string format) , value: can be same or different, can assign any data types.
+
+#JSON = Javascript Object Notation 
+subjects = {
+        'topic1':'Python',
+        'topic2':'java',
+        'topic3':'html',
+        'topic4':'css',
+        'topic5':'bootstrap5',
+        'main_topics':['topic1','topic2'],
+        'topics_dict':{'topic10':'topic inside dic topics_dict'}
+ }
+
+print(subjects['topics_dict']['topic10'])
+print(subjects.get('topics_dict').get('topic10'))
+
+#rotate_left3([1, 2, 3]) → [2, 3, 1]
+a = [1,2,3]
+b=a[0]
+a[0] = a[1]
+a[1] = a[-1]
+a[-1] = b
+
+print(a)
+def num ():
+#     num1=[a[1],a[2],a[0]]
+#     return num1
+
+x = a[1:]
+x.append(a[0])
+print(x)
+
+#condition - Decision-making
+if condition: (if the condition is true)
+        #it will execute condition below the 'if condition'
+
+example:
+
+if 5 > 2:
+    #indented block(4 white spaces)
+    print('a is greater')
+else:
+    print('b is greater')
+
+boundary value testing
+
+test cases:
+
+0-128
+
+-1,0,64,128,129
+
+
+age=input('Enter Your Age:')
+if age.isdigit():
+    age=int(age)
+    if age >=18:
+        voter = input('Do you have Voter ID(Yes/No): ')
+        if voter.lower() =='yes':
+            print('You are eligible to vote!')
+        elif voter.lower() == 'no':
+            print('please apply for Voter ID.')
+        else:
+            print('Invalid Entry.please try again!')
+
+    elif 0 < age <=17:
+        print('You are not eligible to vote.')
+    else:
+        print('Invalid Entry!')
+else:
+    print('Invalid Age')
+
+# -5 , python consider this as string
+
+#if and elif only accepts parameters and else won't accept
+
+
+
+
+
+
+
+
+
+
+
+
+
